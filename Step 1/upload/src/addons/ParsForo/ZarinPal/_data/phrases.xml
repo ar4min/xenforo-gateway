@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="zarinpal_merchant_id" version_id="1" version_string="1.0.0"><![CDATA[ZarinPal Merchant]]></phrase>
+  <phrase title="zarinpal_sepgate" version_id="1" version_string="1.0.0"><![CDATA[SepGate]]></phrase>
+  <phrase title="zarinpal_test_mode" version_id="1" version_string="1.0.0"><![CDATA[Test Mode]]></phrase>
+  <phrase title="zarinpal_you_must_provide_zarinpal_merchant" version_id="1" version_string="1.0.0"><![CDATA[You must provide a ZarinPal Merchant to set up this payment gateway]]></phrase>
+  <phrase title="zarinpal_zarin_sep_error" version_id="1" version_string="1.0.0"><![CDATA[You cant enable ZarinGate and SepGate at the same time]]></phrase>
+  <phrase title="zarinpal_zaringate" version_id="1" version_string="1.0.0"><![CDATA[ZarinGate]]></phrase>
+</phrases>

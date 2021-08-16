@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="payment_profile_ZarinPal" version_id="1" version_string="1.0.0"><![CDATA[
+<xf:textboxrow name="options[zarinpal_merchant]" value="{$profile.options.zarinpal_merchant}"
+	label="{{ phrase('zarinpal_merchant_id') }}"
+	hint="{{ phrase('required') }}">
+</xf:textboxrow>
+<xf:checkboxrow>
+	<xf:option name="options[zarinpal_testmode]" selected="$profile.options.zarinpal_testmode" label="{{ phrase('zarinpal_test_mode') }}" />
+</xf:checkboxrow>
+<xf:checkboxrow>
+	<xf:option name="options[zarinpal_zaringate]" selected="$profile.options.zarinpal_zaringate" label="{{ phrase('zarinpal_zaringate') }}" />
+</xf:checkboxrow>
+<xf:checkboxrow>
+	<xf:option name="options[zarinpal_sepgate]" selected="$profile.options.zarinpal_sepgate" label="{{ phrase('zarinpal_sepgate') }}" />
+</xf:checkboxrow>
+<xf:hiddenval name="options[legacy]" value="{{ $profile.options.legacy ? 1 : 0 }}" />
+]]></template>
+  <template type="public" title="payment_initiate_ZarinPal" version_id="1" version_string="1.0.0"><![CDATA[<xf:css src="payment_initiate.less" />
+<xf:title>{{ phrase('zarinpal_confirm_payment_details') }}</xf:title>
+<form action="{$endpointUrl}" class="block block--paymentInitiate" method="GET">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:formrow controlid="element">
+				<div class="formRow-explain">{{ phrase('payments_processed_securely_by_x', {'link': 'https://zarinpal.com/', 'provider': 'ZarinPal'}) }}</div>
+			</xf:formrow>
+			<hr class="formRowSep" />
+			<xf:formrow label="" rowtype="button">
+				<xf:button type="submit" icon="payment">
+					{{ phrase('pay_x', {'cost': $purchase.cost|currency($purchase.currency)}) }}
+				</xf:button>
+			</xf:formrow>
+			<xf:foreach loop="$payment" value="$value" key="$name">
+				<input type="hidden" name="{$name}" value="{$value}" />
+			</xf:foreach>
+		</div>
+	</div>
+</form>]]></template>
+</templates>
